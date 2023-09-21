@@ -1,0 +1,59 @@
+application:
+  name: mall
+  port: 7082
+
+basicAuth:
+  h8ex8ug5yvsnbqz9: f7d1168d49fafa6fb41edbc67a29ce0d
+
+logging:
+  console: true
+
+database:
+  dialect: mysql
+  url: root:mYL5VRClXYGCX4Hf@tcp(127.0.0.1:3306)/example?charset=utf8mb4&parseTime=true&loc=Local
+  maxIdleConns: 15
+  maxOpenConns: 0
+  debug: false
+
+redis:
+  addr: 127.0.0.1:6379
+  password: GBkrIO9bkOcWrdsC
+  database: 0
+  poolSize: 10
+  minIdleConns: 2
+
+etcd:
+  endpoints:
+    - 127.0.0.1:4079
+    - 127.0.0.1:4179
+    - 127.0.0.1:4279
+  username: root
+  password: Pf*rm1D^V&hBDAKC
+  dialTimeout: 5s
+
+nsq:
+  nsqdAddr: 127.0.0.1:4150
+  nsqLookUpAddr: 127.0.0.1:4161
+
+rocketmq:
+  nameServer: 127.0.0.1:9876
+
+jaeger:
+  host: 127.0.0.1
+  port: 6831
+
+session:
+  cookieName: sid
+  maxAge: 168h
+  httpOnly: true
+
+loginSecurity:
+  captcha: 1
+  warning: 5
+  forbidden: 10
+
+socketIO:
+  dispatch:
+    grpc:
+      port: 8088
+

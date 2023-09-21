@@ -1,0 +1,29 @@
+version: "3.1"
+services:
+  app:
+    image: feverzy/repo:dory-mall-1.0-d5ef763
+    deploy:
+      restart_policy:
+        condition: on-failure
+    volumes:
+      - ./logs:/app/logs
+      - ../etc/localtime:/etc/localtime:ro
+      - ../etc/timezone:/etc/timezone:ro
+    environment:
+      GO_OPT_APPLICATION_ENV: testing
+      GO_OPT_APPLICATION_PORT: 80
+      GO_OPT_DATABASE_DEBUG: false
+      GO_OPT_LOGGING_CONSOLE: false
+      GO_OPT_REDIS_ADDR: 172.31.26.189:12307
+      GO_OPT_DATABASE_URL: root:mYL5VRClXYGCX4Hf@tcp(172.31.26.189:12306)/dory-mall?charset=utf8mb4&parseTime=true&loc=Local
+      GO_OPT_NSQ_NSQDADDR: 172.31.26.189:4150
+      GO_OPT_NSQ_NSQLOOKUPADDR: 172.31.26.189:4161
+      GO_OPT_S3_BASEPATH: m
+      GO_OPT_IMAGEGENERATEURL: http://172.31.26.189:8083
+      GO_OPT_PUBLICURL: http://d3jj68r036qthx.cloudfront.net/dory-pc/0b33b07.html
+    ports:
+      - 8002:80
+    networks:
+      - mynet
+networks:
+  mynet:
