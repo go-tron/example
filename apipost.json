@@ -1,0 +1,521 @@
+{
+	"project": {
+		"name": "momo的私有项目",
+		"description": "",
+		"details": {
+			"variable": [],
+			"servers": [
+				{
+					"server_id": "default",
+					"name": "默认服务"
+				}
+			],
+			"markList": [
+				{
+					"key": "developing",
+					"name": "开发中",
+					"color": "#3A86FF",
+					"is_default": true
+				},
+				{
+					"key": "complated",
+					"name": "已完成",
+					"color": "#2BA58F",
+					"is_default": true
+				},
+				{
+					"key": "modifying",
+					"name": "需修改",
+					"color": "#EC4646",
+					"is_default": true
+				}
+			],
+			"script": {
+				"pre_script": "",
+				"test": ""
+			},
+			"request": {
+				"query": [
+					{
+						"is_checked": "1",
+						"type": "Text",
+						"key": "",
+						"value": "",
+						"description": ""
+					}
+				],
+				"header": [
+					{
+						"is_checked": "1",
+						"type": "Text",
+						"key": "",
+						"value": "",
+						"description": ""
+					}
+				],
+				"body": [
+					{
+						"is_checked": "1",
+						"type": "Text",
+						"key": "",
+						"value": "",
+						"description": ""
+					}
+				]
+			}
+		}
+	},
+	"apis": [
+		{
+			"target_type": "folder",
+			"name": "go-example",
+			"mark": "developing",
+			"sort": 5,
+			"tags": [],
+			"request": {
+				"description": ""
+			},
+			"children": [
+				{
+					"target_type": "api",
+					"name": "returnError",
+					"mark": "developing",
+					"sort": 5,
+					"tags": [],
+					"method": "GET",
+					"mock": "{}",
+					"mock_url": "/returnError",
+					"request": {
+						"url": "http://localhost:7082/returnError",
+						"description": "",
+						"event": {
+							"pre_script": "",
+							"test": ""
+						},
+						"body": {
+							"mode": "json",
+							"parameter": [],
+							"raw": "",
+							"raw_para": [],
+							"raw_schema": {
+								"type": "object"
+							}
+						}
+					},
+					"response": {
+						"success": {
+							"raw": "",
+							"parameter": [],
+							"expect": {
+								"name": "成功",
+								"isDefault": 1,
+								"code": 200,
+								"contentType": "json",
+								"verifyType": "schema",
+								"mock": "",
+								"schema": {}
+							}
+						},
+						"error": {
+							"raw": "",
+							"parameter": [],
+							"expect": {
+								"name": "失败",
+								"isDefault": -1,
+								"code": 404,
+								"contentType": "json",
+								"verifyType": "schema",
+								"mock": "",
+								"schema": {}
+							}
+						}
+					},
+					"children": []
+				},
+				{
+					"target_type": "api",
+					"name": "address-list",
+					"mark": "developing",
+					"sort": 2,
+					"tags": [],
+					"method": "POST",
+					"mock": "{}",
+					"mock_url": "/api/address/list",
+					"request": {
+						"url": "http://localhost:7082/api/address/list",
+						"description": "",
+						"event": {
+							"pre_script": "",
+							"test": ""
+						},
+						"body": {
+							"mode": "json",
+							"parameter": [],
+							"raw": "{\r\n    \"phone\":\"13012345678\",\r\n    \"code\":\"112344\"\r\n}",
+							"raw_para": [],
+							"raw_schema": {
+								"type": "object"
+							}
+						},
+						"header": {
+							"parameter": [
+								{
+									"description": "",
+									"field_type": "String",
+									"is_checked": 1,
+									"key": "Authorization",
+									"value": "Bearer e0c8d8c93eacd0e4d78067309eddda76e35ff246",
+									"not_null": -1,
+									"type": "Text"
+								}
+							]
+						}
+					},
+					"response": {
+						"success": {
+							"raw": "",
+							"parameter": [],
+							"expect": {
+								"name": "成功",
+								"isDefault": 1,
+								"code": 200,
+								"contentType": "json",
+								"verifyType": "schema",
+								"mock": "",
+								"schema": {}
+							}
+						},
+						"error": {
+							"raw": "",
+							"parameter": [],
+							"expect": {
+								"name": "失败",
+								"isDefault": -1,
+								"code": 404,
+								"contentType": "json",
+								"verifyType": "schema",
+								"mock": "",
+								"schema": {}
+							}
+						}
+					},
+					"children": []
+				},
+				{
+					"target_type": "api",
+					"name": "login",
+					"mark": "developing",
+					"sort": 1,
+					"tags": [],
+					"method": "POST",
+					"mock": "{}",
+					"mock_url": "/api/auth/login",
+					"request": {
+						"url": "http://localhost:7082/api/auth/login",
+						"description": "",
+						"event": {
+							"pre_script": "",
+							"test": ""
+						},
+						"body": {
+							"mode": "json",
+							"parameter": [],
+							"raw": "{\r\n    \"phone\":\"13012345690\",\r\n    \"code\":\"112344\"\r\n}",
+							"raw_para": [],
+							"raw_schema": {
+								"type": "object"
+							}
+						}
+					},
+					"response": {
+						"success": {
+							"raw": "",
+							"parameter": [],
+							"expect": {
+								"name": "成功",
+								"isDefault": 1,
+								"code": 200,
+								"contentType": "json",
+								"verifyType": "schema",
+								"mock": "",
+								"schema": {}
+							}
+						},
+						"error": {
+							"raw": "",
+							"parameter": [],
+							"expect": {
+								"name": "失败",
+								"isDefault": -1,
+								"code": 404,
+								"contentType": "json",
+								"verifyType": "schema",
+								"mock": "",
+								"schema": {}
+							}
+						}
+					},
+					"children": []
+				},
+				{
+					"target_type": "api",
+					"name": "address-create",
+					"mark": "developing",
+					"sort": 1,
+					"tags": [],
+					"method": "POST",
+					"mock": "{}",
+					"mock_url": "/api/address/create",
+					"request": {
+						"url": "http://localhost:7082/api/address/create",
+						"description": "",
+						"event": {
+							"pre_script": "",
+							"test": ""
+						},
+						"body": {
+							"mode": "json",
+							"parameter": [],
+							"raw": "{\r\n    \"userId\": 120306256937984,\r\n    \"name\": \"啊\",\r\n    \"tel\": \"1\",\r\n    \"country\": \"1\",\r\n    \"province\": \"1\",\r\n    \"city\": \"1\",\r\n    \"district\": \"1\",\r\n    \"title\": \"1\",\r\n    \"address\": \"1\",\r\n    \"detail\": \"1\",\r\n    \"areaCode\": \"1\",\r\n    \"postalCode\": \"1\",\r\n    \"tag\": \"1\",\r\n    \"lng\": 1,\r\n    \"lat\": 1\r\n}",
+							"raw_para": [],
+							"raw_schema": {
+								"type": "object"
+							}
+						},
+						"header": {
+							"parameter": [
+								{
+									"description": "",
+									"field_type": "String",
+									"is_checked": 1,
+									"key": "Authorization",
+									"value": "Bearer e0c8d8c93eacd0e4d78067309eddda76e35ff246",
+									"not_null": -1,
+									"type": "Text"
+								}
+							]
+						}
+					},
+					"response": {
+						"success": {
+							"raw": "",
+							"parameter": [],
+							"expect": {
+								"name": "成功",
+								"isDefault": 1,
+								"code": 200,
+								"contentType": "json",
+								"verifyType": "schema",
+								"mock": "",
+								"schema": {}
+							}
+						},
+						"error": {
+							"raw": "",
+							"parameter": [],
+							"expect": {
+								"name": "失败",
+								"isDefault": -1,
+								"code": 404,
+								"contentType": "json",
+								"verifyType": "schema",
+								"mock": "",
+								"schema": {}
+							}
+						}
+					},
+					"children": []
+				},
+				{
+					"target_type": "api",
+					"name": "panic",
+					"mark": "developing",
+					"sort": 6,
+					"tags": [],
+					"method": "GET",
+					"mock": "{}",
+					"mock_url": "/panic",
+					"request": {
+						"url": "http://localhost:7082/panic",
+						"description": "",
+						"event": {
+							"pre_script": "",
+							"test": ""
+						},
+						"body": {
+							"mode": "json",
+							"parameter": [],
+							"raw": "",
+							"raw_para": [],
+							"raw_schema": {
+								"type": "object"
+							}
+						}
+					},
+					"response": {
+						"success": {
+							"raw": "",
+							"parameter": [],
+							"expect": {
+								"name": "成功",
+								"isDefault": 1,
+								"code": 200,
+								"contentType": "json",
+								"verifyType": "schema",
+								"mock": "",
+								"schema": {}
+							}
+						},
+						"error": {
+							"raw": "",
+							"parameter": [],
+							"expect": {
+								"name": "失败",
+								"isDefault": -1,
+								"code": 404,
+								"contentType": "json",
+								"verifyType": "schema",
+								"mock": "",
+								"schema": {}
+							}
+						}
+					},
+					"children": []
+				},
+				{
+					"target_type": "api",
+					"name": "index",
+					"mark": "developing",
+					"sort": 3,
+					"tags": [],
+					"method": "GET",
+					"mock": "{}",
+					"mock_url": "/",
+					"request": {
+						"url": "http://localhost:7082/",
+						"description": "",
+						"event": {
+							"pre_script": "",
+							"test": ""
+						},
+						"body": {
+							"mode": "json",
+							"parameter": [],
+							"raw": "",
+							"raw_para": [],
+							"raw_schema": {
+								"type": "object"
+							}
+						}
+					},
+					"response": {
+						"success": {
+							"raw": "",
+							"parameter": [],
+							"expect": {
+								"name": "成功",
+								"isDefault": 1,
+								"code": 200,
+								"contentType": "json",
+								"verifyType": "schema",
+								"mock": "",
+								"schema": {}
+							}
+						},
+						"error": {
+							"raw": "",
+							"parameter": [],
+							"expect": {
+								"name": "失败",
+								"isDefault": -1,
+								"code": 404,
+								"contentType": "json",
+								"verifyType": "schema",
+								"mock": "",
+								"schema": {}
+							}
+						}
+					},
+					"children": []
+				},
+				{
+					"target_type": "api",
+					"name": "error",
+					"mark": "developing",
+					"sort": 4,
+					"tags": [],
+					"method": "GET",
+					"mock": "{}",
+					"mock_url": "/error",
+					"request": {
+						"url": "http://localhost:7082/error",
+						"description": "",
+						"event": {
+							"pre_script": "",
+							"test": ""
+						},
+						"body": {
+							"mode": "json",
+							"parameter": [],
+							"raw": "",
+							"raw_para": [],
+							"raw_schema": {
+								"type": "object"
+							}
+						}
+					},
+					"response": {
+						"success": {
+							"raw": "",
+							"parameter": [],
+							"expect": {
+								"name": "成功",
+								"isDefault": 1,
+								"code": 200,
+								"contentType": "json",
+								"verifyType": "schema",
+								"mock": "",
+								"schema": {}
+							}
+						},
+						"error": {
+							"raw": "",
+							"parameter": [],
+							"expect": {
+								"name": "失败",
+								"isDefault": -1,
+								"code": 404,
+								"contentType": "json",
+								"verifyType": "schema",
+								"mock": "",
+								"schema": {}
+							}
+						}
+					},
+					"children": []
+				}
+			]
+		}
+	],
+	"envs": [
+		{
+			"env_id": "-1",
+			"list": {},
+			"name": "默认环境",
+			"pre_url": "",
+			"pre_urls": {
+				"default": ""
+			}
+		},
+		{
+			"env_id": "-2",
+			"list": {},
+			"name": "Mock环境",
+			"pre_url": "https://console-mock.apipost.cn/mock/71f63e03-4c26-417d-bd63-63771e334c9a/",
+			"pre_urls": {
+				"default": "https://console-mock.apipost.cn/mock/71f63e03-4c26-417d-bd63-63771e334c9a/"
+			}
+		}
+	],
+	"models": []
+}
